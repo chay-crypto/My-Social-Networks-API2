@@ -6,16 +6,20 @@ import cors from "cors";
 import userRoutes from "./routes/userRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import groupRoutes from "./routes/groupRoutes.js";
+import ticketRoutes from "./routes/ticketRoutes.js";
+import discussionRoutes from "./routes/discussionRoutes.js";
 
 
 
 const app = express();
 app.use(express.json());
+
 //Partie Social API2
 app.use("/users", userRoutes);
 app.use("/events", eventRoutes);
 app.use("/groups", groupRoutes);
-
+app.use("/tickets", ticketRoutes);
+app.use("/discussions", discussionRoutes);
 
 app.use(cors());
 
