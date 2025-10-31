@@ -3,7 +3,7 @@ import Event from "../models/Event.js";
 
 const router = express.Router();
 
-// ➕ Créer un événement
+//Créer un événement
 router.post("/", async (req, res) => {
   try {
     const event = await Event.create(req.body);
@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 🔍 Lister tous les événements
+//Lister les événements
 router.get("/", async (req, res) => {
   try {
     const events = await Event.find();

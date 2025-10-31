@@ -3,7 +3,7 @@ import Group from "../models/Group.js";
 
 const router = express.Router();
 
-// ➕ Créer un groupe
+//Créer un grp
 router.post("/", async (req, res) => {
   try {
     const group = await Group.create(req.body);
@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 🔍 Lister tous les groupes
+//Lister tous les grp
 router.get("/", async (req, res) => {
   try {
     const groups = await Group.find();

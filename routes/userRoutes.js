@@ -3,7 +3,7 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
-// ➕ Créer un utilisateur
+//Créer un user
 router.post("/", async (req, res) => {
   try {
     const user = await User.create(req.body);
@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 🔍 Lister tous les utilisateurs
+//Lister tous les users
 router.get("/", async (req, res) => {
   const users = await User.find();
   res.json(users);

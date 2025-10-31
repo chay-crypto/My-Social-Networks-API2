@@ -3,7 +3,7 @@ import Photo from "../models/Photo.js";
 
 const router = express.Router();
 
-//Récupérer toutes les photos
+//Récup toutes les photos
 router.get("/", async (req, res) => {
   try {
     const photos = await Photo.find();
@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//Ajouter une photo
+//Ajt une photo
 router.post("/", async (req, res) => {
   try {
     const { title, url, albumId } = req.body;
@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 🔹 Récupérer toutes les photos d'un album
+//Récup toutes les photos d'un album
 router.get("/album/:albumId", async (req, res) => {
   try {
     const { albumId } = req.params;
@@ -41,7 +41,7 @@ router.get("/album/:albumId", async (req, res) => {
   }
 });
 
-// 🔹 Modifier une photo existante
+//Modif d'une photo existante
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -59,7 +59,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// 🔹 Supprimer une photo
+//Supp une photo
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -69,8 +69,6 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-
 
 
 export default router;

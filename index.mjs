@@ -19,12 +19,12 @@ app.use("/groups", groupRoutes);
 
 app.use(cors());
 
-// --- Connexion MongoDB ---
+//Connexion MongoDB
 mongoose.connect("mongodb+srv://chaima:12345@cluster0.lrzzyun.mongodb.net/albumsdb")
   .then(() => console.log("Connecté à MongoDB"))
   .catch(err => console.error("Erreur MongoDB :", err));
 
-// --- Import des routes ---
+//Import des routes
 import albumRoutes from "./routes/albumRoutes.js";
 import photoRoutes from "./routes/photoRoutes.js";
 

@@ -2,7 +2,7 @@ import express from "express";
 import Album from "../models/Album.js";
 const router = express.Router();
 
-// Créer un album
+//Créer un album
 router.post("/", async (req, res) => {
   try {
     const album = await Album.create(req.body);
@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Récupérer tous les albums
+//Récup tous les albums
 router.get("/", async (req, res) => {
   try {
     const albums = await Album.find().populate("photos");
@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Récupérer un album par ID
+//Récup un album par ID
 router.get("/:id", async (req, res) => {
   try {
     const album = await Album.findById(req.params.id).populate("photos");
@@ -33,7 +33,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Mettre à jour un album
+//Mettre à jour un album
 router.put("/:id", async (req, res) => {
   try {
     const album = await Album.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -43,7 +43,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// Supprimer un album
+//Supp un album
 router.delete("/:id", async (req, res) => {
   try {
     await Album.findByIdAndDelete(req.params.id);
