@@ -2,8 +2,21 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 
+//Partie SOCIAL API2
+import userRoutes from "./routes/userRoutes.js";
+import eventRoutes from "./routes/eventRoutes.js";
+import groupRoutes from "./routes/groupRoutes.js";
+
+
+
 const app = express();
 app.use(express.json());
+//Partie Social API2
+app.use("/users", userRoutes);
+app.use("/events", eventRoutes);
+app.use("/groups", groupRoutes);
+
+
 app.use(cors());
 
 // --- Connexion MongoDB ---
